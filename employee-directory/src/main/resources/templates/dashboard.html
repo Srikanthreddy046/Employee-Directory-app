@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Employee Directory</h1>
+            </div>
+            <div class="header-right">
+                <input type="text" id="search-input" placeholder="Search by name or email">
+                <button id="filter-btn">Filter</button>
+            </div>
+        </header>
+        <div id="filter-panel" class="filter-popup hidden">
+            <input type="text" id="filter-firstname" placeholder="First Name">
+            <input type="text" id="filter-department" placeholder="Department">
+            <input type="text" id="filter-role" placeholder="Role">
+            <div class="filter-actions">
+                <button id="apply-filter-btn">Apply Filter</button>
+                <button id="reset-filter-btn" type="button">Reset</button>
+            </div>
+        </div>
+        <div class="controls-row">
+            <div class="left-controls">
+                <select id="sort-select">
+                    <option value="firstName">Sort by First Name</option>
+                    <option value="department">Sort by Department</option>
+                </select>
+                <select id="show-count-select">
+                    <option value="5" >Show 5</option>
+                    <option value="10" selected>Show 10</option>
+                    <option value="25">Show 25</option>
+                    <option value="50">Show 50</option>
+                    <option value="100">Show 100</option>
+                </select>
+            </div>
+            <div class="right-controls">
+                <button id="add-employee-btn" class="right-btn">Add Employee</button>
+            </div>
+        </div>
+        <div id="pagination-controls"></div>
+        <div id="employee-list-container">
+            <!-- Employee cards will be rendered here by app.js -->
+        </div>
+        <div id="form-container" class="hidden"></div>
+        <footer id="app-footer">
+            <span style="font-size: 1.1em; margin-right: 6px;">&#169;</span> 
+            2025 Employee Directory App. All rights reserved.
+        </footer>
+
+    </div>
+    
+
+    <script src="../static/js/data.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

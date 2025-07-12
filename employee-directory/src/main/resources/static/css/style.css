@@ -1,0 +1,517 @@
+/* Controls Row Styling */
+.controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    gap: 16px;
+}
+.controls-row .left-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+#employee-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+
+.controls-row .right-controls {
+    display: flex;
+    align-items: center;
+}
+.controls-row select {
+    min-width: 120px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 1em;
+    background: #f8fafc;
+}
+#sort-select {
+    margin-top: 11px;
+}
+.controls-row .right-btn {
+    padding: 12px 28px;
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.controls-row .right-btn:hover {
+    background: #15803d;
+}
+@media (max-width: 600px) {
+    .controls-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .controls-row .left-controls {
+        width: 100%;
+        gap: 10px;
+    }
+    .controls-row .right-btn {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+/* Filter Popup Styling */
+.filter-popup {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    width: 260px;
+    background: #fff;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    padding: 18px 16px 12px 16px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.filter-popup .filter-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+#reset-filter-btn {
+    background: #64748b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#reset-filter-btn:hover {
+    background: #334155;
+}
+/* Header Styling */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4F4D47;
+    padding: 18px 28px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.header-left h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #ffffff;
+    font-weight: 700;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.header-right #search-input {
+    margin-bottom: 0;
+    width: 220px;
+    padding: 9px 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+}
+.header-right #filter-btn {
+    margin-bottom: 0;
+    padding: 9px 18px;
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.header-right #filter-btn:hover {
+    background: #0369a1;
+}
+@media (max-width: 600px) {
+    .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 8px;
+    }
+    .header-right {
+        width: 100%;
+        margin-top: 10px;
+        gap: 8px;
+    }
+    .header-right #search-input {
+        width: 100%;
+    }
+}
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+}
+#app {
+    max-width: 900px;
+    margin: 32px auto;
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* Employee Cards Row Layout */
+.employee-cards-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+.employee-card {
+    flex: 0 1 280px;         /* Allow shrinking and growing, base width 280px */
+    max-width: 280px;
+    min-width: 220px;
+    padding: 20px 16px;
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e3e8ee;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+
+/* Remove bottom margin for flex row, use gap instead */
+.employee-card {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .employee-cards-row {
+        gap: 12px;
+    }
+    .employee-card {
+        flex: 1 1 220px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .employee-cards-row {
+        flex-direction: column;
+        gap: 7px;
+    }
+    .employee-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+.employee-card {
+    display: flex;
+    flex-direction: column;
+    background: #f8fafc;
+    margin-bottom: 20px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e3e8ee;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.employee-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    border: 1px solid #b6c2d6;
+}
+.employee-card h3 {
+    margin: 0 0 12px 0;
+    color: #222e3c;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+.employee-card p {
+    margin: 3px 0;
+    color: #4b5876;
+    font-size: 1em;
+}
+.employee-card .button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.employee-card .button-row button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+/* Modal Overlay Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal Form Box */
+.modal-content {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+.employee-card .edit-btn {
+    background: #2563eb;
+    color: #fff;
+}
+.employee-card .edit-btn:hover {
+    background: #1741a6;
+}
+
+.employee-card .delete-btn {
+    background: #ef4444;
+    color: #fff;
+}
+.employee-card .delete-btn:hover {
+    background: #b91c1c;
+}
+
+.employee-card button:hover {
+    background: #1741a6;
+}
+.employee-card button.delete-btn {
+    background: #ef4444;
+}
+.employee-card button.delete-btn:hover {
+    background: #b91c1c;
+}
+#add-employee-btn {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 300;
+    transition: background 0.2s;
+}
+#add-employee-btn:hover {
+    background: #15803d;
+}
+#pagination-controls {
+    margin-bottom: 18px;
+    text-align: center;
+}
+#pagination-controls button {
+    margin: 0 4px;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #e0e7ef;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+#pagination-controls button.active {
+    background: #2563eb;
+    color: #fff;
+}
+#search-input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #f8fafc;
+}
+#filter-btn {
+    margin-bottom: 12px;
+    padding: 9px 18px;
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+#filter-btn:hover {
+    background: #0369a1;
+}
+#filter-panel {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e3e8ee;
+}
+#filter-panel.hidden {
+    display: none;
+}
+#filter-panel input[type="text"] {
+    margin-bottom: 10px;
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+}
+#apply-filter-btn {
+    padding: 8px 18px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+#apply-filter-btn:hover {
+    background: #1741a6;
+}
+#sort-select {
+    margin-bottom: 16px;
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #f8fafc;
+}
+#form-container {
+    background: #f8fafc;
+    padding: 26px;
+    border-radius: 14px;
+    margin-bottom: 26px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: 1px solid #e3e8ee;
+}
+#form-container.hidden {
+    display: none;
+}
+#employee-form input[type="text"], #employee-form input[type="email"] {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+}
+button[type="submit"] {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 22px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+button[type="submit"]:hover {
+    background: #1741a6;
+}
+button#cancel-btn {
+    background: #64748b;
+    color: #fff;
+    margin-left: 12px;
+    padding: 11px 22px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+button#cancel-btn:hover {
+    background: #334155;
+}
+.error {
+    color: #ef4444;
+    font-size: 1em;
+    margin-top: 8px;
+}
+@media (max-width: 900px) {
+    #app {
+        max-width: 98vw;
+        padding: 12px;
+    }
+    .employee-card {
+        padding: 12px;
+    }
+}
+@media (max-width: 600px) {
+    #app {
+        max-width: 100vw;
+        padding: 4px;
+    }
+    .employee-card {
+        padding: 7px;
+        font-size: 0.97em;
+    }
+    #add-employee-btn, #pagination-controls button {
+        padding: 7px 12px;
+        font-size: 0.97em;
+    }
+    #form-container {
+        padding: 10px;
+    }
+}
+
+#app-footer {
+    background: #4F4D47; /* same as header */
+    padding: 16px 0;
+    padding-left:10px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #c1c5ca;
+    border-radius: 12px;
+    margin: 24px auto 0;
+    max-width: 900px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+@media (max-width: 600px) {
+    #app-footer {
+        width: 100%;
+        border-radius: 0;
+    }
+}
